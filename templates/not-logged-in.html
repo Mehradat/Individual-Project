@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="You are not logged in." />
+    <meta name="keywords" content="not logged in, access denied" />
+    <title>Login Failed</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=David+Libre:wght@400;500;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/login.css') }}"
+    />
+    <style>
+      .error-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #fff5f0 0%, #ffffff 100%);
+        padding: 20px;
+      }
+
+      .error-box {
+        background: white;
+        padding: 50px 40px;
+        border-radius: 15px;
+        box-shadow: 0px 8px 30px rgba(234, 109, 39, 0.15);
+        text-align: center;
+        max-width: 500px;
+        width: 100%;
+        animation: slideDown 0.5s ease;
+      }
+
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .error-icon {
+        font-size: 64px;
+        margin-bottom: 20px;
+      }
+
+      .error-box h2 {
+        color: #d32f2f;
+        font-size: 28px;
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+
+      .error-box p {
+        color: #666;
+        font-size: 16px;
+        margin-bottom: 30px;
+        line-height: 1.6;
+      }
+
+      .error-box a {
+        display: inline-block;
+        padding: 14px 40px;
+        background-color: #ea6d27;
+        color: white;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 16px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+
+      .error-box a:hover {
+        background-color: #d65a1f;
+        transform: translateY(-2px);
+      }
+
+      .back-home {
+        margin-top: 15px;
+        display: inline-block;
+        color: #ea6d27;
+        text-decoration: none;
+        font-size: 14px;
+        transition: color 0.3s ease;
+      }
+
+      .back-home:hover {
+        color: #d65a1f;
+        text-decoration: underline;
+      }
+    </style>
+      <!-- favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{{ url_for('static', filename='icons/apple-touch-icon.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{ url_for('static', filename='icons/favicon-32x32.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{{ url_for('static', filename='icons/favicon-16x16.png') }}"
+    />
+    <link
+      rel="manifest"
+      href="{{ url_for('static', filename='icons/site.webmanifest') }}"
+    />
+  </head>
+  <body>
+    <div class="error-container">
+      <div class="error-box">
+        <div class="error-icon">🔒</div>
+        <h2>Login Failed</h2>
+        <p>
+          Incorrect username or password. Please check your credentials and try
+          again.
+        </p>
+        <a href="/login">Try Again</a>
+        <br />
+        <a href="/" class="back-home">← Back to Home</a>
+      </div>
+    </div>
+  </body>
+</html>

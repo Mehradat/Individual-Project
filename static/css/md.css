@@ -1,0 +1,155 @@
+@media (min-width: 760px) and (max-width: 991px) {
+    
+    header {
+        padding: 15px 20px;
+        height: auto;
+    }
+    header .logo {
+        width: 140px;
+        height: auto;
+    }
+    header .nav .menu-nav .menu-list {
+        gap: 15px;
+    }
+    header .nav .menu-nav .menu-list .menu-item .menu-link {
+        font-size: 14px;
+    }
+    header .button .menu-button {
+        width: 110px;
+        font-size: 15px;
+        height: 35px;
+        line-height: 35px;
+    }
+    header .button .welcome {
+        font-size: 14px;
+        padding: 0 5px;
+    }
+
+    
+    .section1 {
+        flex-direction: column-reverse;
+        height: auto;
+        padding-bottom: 50px;
+        background-position: center;
+    }
+    .section1 .section1-left {
+        width: 100%;
+        padding: 40px 30px;
+        text-align: center;
+    }
+    .section1 .section1-left .title {
+        width: 100%;
+        font-size: 36px;
+        padding-bottom: 20px;
+    }
+    .section1 .section1-left .parag {
+        width: 100%;
+        margin: 0 auto 30px;
+    }
+    .section1 .section1-left .left-button {
+        display: flex;
+        justify-content: center;
+    }
+    .section1 .section1-right {
+        width: 100%;
+        padding-top: 100px;
+        display: flex;
+        justify-content: center;
+        height: auto;
+    }
+    .section1 .section1-right img:nth-child(1) {
+        width: 60%;
+        height: auto;
+    }
+    .section1 .section1-right img:nth-child(2) {
+        right: 70%;
+        width: 80px;
+    }
+
+    
+    .section2-menu {
+        padding: 50px 0;
+    }
+    .section2-menu .cards {
+        gap: 20px;
+        width: 90%;
+    }
+    .section2-menu .card {
+        width: 45%; 
+        padding: 20px;
+    }
+    
+    
+    .section2-menu .chef-section {
+        flex-direction: column;
+        margin-top: 60px;
+        text-align: center;
+        gap: 40px;
+    }
+    .section2-menu .chef-section .chef-left {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .section2-menu .chef-section .chef-left .chef-parag {
+        width: 80%;
+    }
+    .section2-menu .chef-section .chef-left .chef-lists {
+        gap: 40px;
+        text-align: left;
+    }
+    .section2-menu .chef-section .chef-right {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .section2-menu .chef-section .chef-right img {
+        width: 300px;
+    }
+
+    
+    .newsletter-wrapper {
+        width: 90%;
+    }
+    .newsletter-content h2 {
+        font-size: 28px;
+    }
+    .newsletter-input {
+        width: 90%;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .newsletter-input input {
+        width: 100%;
+        text-align: center;
+    }
+    .newsletter-input button {
+        width: 100%;
+    }
+
+    
+    .footer {
+        flex-wrap: wrap;
+        padding: 60px 5%;
+        gap: 40px;
+    }
+    .footer .footer-left {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer .footer-logo {
+        transform: none;
+        justify-content: center;
+    }
+    .footer .footer-nav {
+        width: 45%;
+        margin-left: 0;
+    }
+    .footer .footer-social {
+        width: 45%;
+    }
+}

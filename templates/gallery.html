@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="View our gallery to see photos of our delicious food and beautiful restaurant atmosphere."
+    />
+    <meta
+      name="keywords"
+      content="gallery, food photos, restaurant interior, atmosphere, images"
+    />
+    <title>Gallery</title>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=David+Libre:wght@400;500;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+        <!-- favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{{ url_for('static', filename='icons/apple-touch-icon.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{ url_for('static', filename='icons/favicon-32x32.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{{ url_for('static', filename='icons/favicon-16x16.png') }}"
+    />
+    <link
+      rel="manifest"
+      href="{{ url_for('static', filename='icons/site.webmanifest') }}"
+    />
+    <!-- css import -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/gallery.css') }}"
+    />
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <div class="logo">
+        <a href="/">
+          <img
+            src="{{ url_for('static', filename='img/logo 1.png') }}"
+            alt="Site logo"
+          />
+        </a>
+      </div>
+      <div class="nav">
+        <nav class="menu-nav">
+          <ul class="menu-list">
+            <li class="menu-item">
+              <a href="/menu" class="menu-link">Menu</a>
+            </li>
+            <li class="menu-item">
+              <a href="/gallery" class="menu-link">Gallery</a>
+            </li>
+            <li class="menu-item">
+              <a href="/about" class="menu-link">About</a>
+            </li>
+            <li class="menu-item">
+              <a href="/contact" class="menu-link">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="button">
+        {% if session.get('userid') %} {% if session.get('role') == 2 %}
+        <a href="/admin/dashboard" class="menu-button admin-btn">Admin</a>
+        {% else %}
+        <a href="/order" class="cart-count">0</a>
+        {% endif %}
+        <span class="welcome">Hello {{ session.get('username') }}</span>
+        <a href="/logout" class="menu-button">Logout</a>
+        {% else %}
+        <a href="/create-account" class="menu-button">Create Account</a>
+        <a href="/login" class="menu-button">Login</a>
+        {% endif %}
+      </div>
+    </header>
+    <!-- end of header -->
+
+    <main class="gallery-main">
+      <div class="gallery-header">
+        <h1>Our Gallery</h1>
+        <div class="gallery-container">
+          {% for photo in photos %}
+          <div class="photo-card">
+            <img
+              src="{{ url_for('static', filename='img/gallery/' + photo.image) }}"
+              alt="{{ photo.title }}"
+            />
+            <div class="photo-title">{{ photo.title }}</div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-left">
+        <div class="footer-logo">
+          <a href="/"
+            ><img src="{{ url_for('static', filename='img/logo 1.png') }}"
+          /></a>
+        </div>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore.
+          <a href="#">Learn more</a>
+        </p>
+
+        <h4 class="footer-title">OPENING HOURS</h4>
+
+        <div class="hours">
+          <div>
+            <p>Monday - Friday</p>
+            <span>8:00 am to 9:00 pm</span>
+          </div>
+          <div>
+            <p>Saturday</p>
+            <span>8:00 am to 9:00 pm</span>
+          </div>
+          <div>
+            <p>Sunday</p>
+            <span>CLOSED</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-nav">
+        <h4 class="footer-title">NAVIGATION</h4>
+        <ul>
+          <li><a href="/menu">Menu</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="/contact">Contact us</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4 class="footer-title">FOLLOW US</h4>
+
+        <div class="social-icons">
+          <a href="#"
+            ><img
+              src="{{ url_for('static', filename='img/facebook.png') }}"
+              class="fa-brands fa-facebook"
+          /></a>
+          <a href="#"
+            ><img
+              src="{{ url_for('static', filename='img/instagram 2.png') }}"
+              class="fa-brands fa-instagram"
+          /></a>
+          <a href="#"
+            ><img
+              src="{{ url_for('static', filename='img/twiter.png') }}"
+              class="fa-brands fa-twitter"
+          /></a>
+        </div>
+      </div>
+    </footer>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>

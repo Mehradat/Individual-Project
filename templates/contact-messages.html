@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="View contact messages." />
+    <meta name="keywords" content="contact, messages, admin" />
+    <title>Contact Messages</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/admin-dashboard.css') }}"
+    />
+      <!-- favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{{ url_for('static', filename='icons/apple-touch-icon.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{ url_for('static', filename='icons/favicon-32x32.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{{ url_for('static', filename='icons/favicon-16x16.png') }}"
+    />
+    <link
+      rel="manifest"
+      href="{{ url_for('static', filename='icons/site.webmanifest') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Contact Messages</h1>
+      <div class="top-right-button">
+        <a href="/admin/dashboard" class="menu-button">Back to Dashboard</a>
+        <a href="/logout" class="menu-button">Logout</a>
+      </div>
+    </header>
+    <main>
+      <section>
+        <h2>Messages from Users</h2>
+        <table class="foods-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Message</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for msg in messages %}
+            <tr>
+              <td>{{ msg.id }}</td>
+              <td>{{ msg.name }}</td>
+              <td>{{ msg.email }}</td>
+              <td>{{ msg.message }}</td>
+            </tr>
+            {% else %}
+            <tr>
+              <td colspan="4">No messages found.</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>

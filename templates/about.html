@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Learn more about our restaurant's history, our team, and our passion for serving delicious food."
+    />
+    <meta
+      name="keywords"
+      content="about us, restaurant history, chef, team, dining experience"
+    />
+    <title>About Us</title>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=David+Libre:wght@400;500;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+        <!-- favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{{ url_for('static', filename='icons/apple-touch-icon.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{ url_for('static', filename='icons/favicon-32x32.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{{ url_for('static', filename='icons/favicon-16x16.png') }}"
+    />
+    <link
+      rel="manifest"
+      href="{{ url_for('static', filename='icons/site.webmanifest') }}"
+    />
+    <!-- css import -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/contact.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/about.css') }}"
+    />
+  </head>
+  <body>
+    <!-- header -->
+    <header>
+      <div class="logo">
+        <a href="/">
+          <img
+            src="{{ url_for('static', filename='img/logo 1.png') }}"
+            alt="Site logo"
+          />
+        </a>
+      </div>
+      <div class="nav">
+        <nav class="menu-nav">
+          <ul class="menu-list">
+            <li class="menu-item">
+              <a href="/menu" class="menu-link">Menu</a>
+            </li>
+            <li class="menu-item">
+              <a href="/gallery" class="menu-link">Gallery</a>
+            </li>
+            <li class="menu-item">
+              <a href="/about" class="menu-link">About</a>
+            </li>
+            <li class="menu-item">
+              <a href="/contact" class="menu-link">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="button">
+        {% if session.get('userid') %} {% if session.get('role') == 2 %}
+        <a href="/admin/dashboard" class="menu-button admin-btn">Admin</a>
+        {% else %}
+        <a href="/order" class="cart-count">0</a>
+        {% endif %}
+        <span class="welcome">Hello {{ session.get('username') }}</span>
+        <a href="/logout" class="menu-button">Logout</a>
+        {% else %}
+        <a href="/create-account" class="menu-button">Create Account</a>
+        <a href="/login" class="menu-button">Login</a>
+        {% endif %}
+      </div>
+    </header>
+    <!-- end of header -->
+
+    <main class="about-main">
+      <div class="about-wrapper">
+        <div class="about-header-center">
+          <h1>About Us</h1>
+          <p>Get to know us better.</p>
+        </div>
+
+        <div class="about-text">
+          <p>
+            At our restaurant, we believe that exceptional food begins long
+            before it reaches the plate. That’s why we source only the finest
+            ingredients — from fresh, locally grown produce to high-quality
+            meats, artisanal breads, and premium spices from trusted suppliers
+            around the world. Every item in our kitchen is chosen with care,
+            ensuring purity, flavor, and consistency in every bite.
+          </p>
+
+          <p>
+            Our chefs combine traditional techniques with creative inspiration,
+            crafting dishes that highlight the natural richness of each
+            ingredient. Whether it’s a slow-cooked signature entrée, a vibrant
+            seasonal salad, or a handcrafted dessert, we focus on delivering
+            deep, satisfying flavors and a beautifully balanced dining
+            experience.
+          </p>
+
+          <p>
+            Quality is our promise. We prepare everything fresh, avoid
+            shortcuts, and pay attention to the smallest details — because our
+            guests deserve nothing less. From the warm, inviting atmosphere to
+            the dedication of our team, our goal is to create a place where
+            great food, comfort, and unforgettable moments come together.
+          </p>
+
+          <p>
+            Welcome to a restaurant where passion, quality, and hospitality are
+            at the heart of everything we do.
+          </p>
+        </div>
+
+        <div class="about-info-section">
+          <div class="about-info-card contact-card-orange">
+            <h3>Contact Information</h3>
+            <div class="info-item">
+              <span class="icon">📍</span>
+              <div>
+                <strong>Address</strong>
+                <p>123 Main Street, City Name</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <span class="icon">📞</span>
+              <div>
+                <strong>Phone</strong>
+                <p>+1 (555) 123-4567</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <span class="icon">✉️</span>
+              <div>
+                <strong>Email</strong>
+                <p>support@example.com</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-info-card">
+            <h3>Opening Hours</h3>
+            <div class="hours-list">
+              <div class="hour-item">
+                <span>Mon - Fri</span>
+                <span>8:00 am - 9:00 pm</span>
+              </div>
+              <div class="hour-item">
+                <span>Saturday</span>
+                <span>8:00 am - 9:00 pm</span>
+              </div>
+              <div class="hour-item closed">
+                <span>Sunday</span>
+                <span>Closed</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-left">
+        <div class="footer-logo">
+          <a href="/">
+            <img
+              src="{{ url_for('static', filename='img/logo 1.png') }}"
+              alt="Site logo"
+            />
+          </a>
+        </div>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore.
+          <a href="#">Learn more</a>
+        </p>
+
+        <h4 class="footer-title">OPENING HOURS</h4>
+
+        <div class="hours">
+          <div>
+            <p>Monday - Friday</p>
+            <span>8:00 am to 9:00 pm</span>
+          </div>
+          <div>
+            <p>Saturday</p>
+            <span>8:00 am to 9:00 pm</span>
+          </div>
+          <div>
+            <p>Sunday</p>
+            <span>CLOSED</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-nav">
+        <h4 class="footer-title">NAVIGATION</h4>
+        <ul>
+          <li><a href="/menu">Menu</a></li>
+          <li><a href="/about">About us</a></li>
+          <li><a href="/contact">Contact us</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4 class="footer-title">FOLLOW US</h4>
+
+        <div class="social-icons">
+          <a href="#">
+            <img
+              src="{{ url_for('static', filename='img/facebook.png') }}"
+              alt="facebook"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="{{ url_for('static', filename='img/instagram 2.png') }}"
+              alt="instagram"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="{{ url_for('static', filename='img/twiter.png') }}"
+              alt="twitter"
+            />
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</html>

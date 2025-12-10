@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Food item added successfully." />
+    <meta name="keywords" content="food, added, success" />
+    <title>Food Added</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/admin-dashboard.css') }}"
+    />
+    <style></style>
+      <!-- favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{{ url_for('static', filename='icons/apple-touch-icon.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{ url_for('static', filename='icons/favicon-32x32.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{{ url_for('static', filename='icons/favicon-16x16.png') }}"
+    />
+    <link
+      rel="manifest"
+      href="{{ url_for('static', filename='icons/site.webmanifest') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Admin Dashboard</h1>
+      <div class="top-right-button">
+        <a href="/login" class="menu-button">Logout</a>
+        <a href="/" class="menu-button">Homepage</a>
+      </div>
+    </header>
+    <main>
+      <section class="success-card">
+        <h1>Food Added Successfully</h1>
+        <p>{{ name }} added to database!</p>
+        <a href="/admin/dashboard" class="back-btn">Back</a>
+      </section>
+    </main>
+  </body>
+</html>

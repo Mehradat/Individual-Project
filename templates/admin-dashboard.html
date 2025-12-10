@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Admin dashboard for managing the restaurant website."
+    />
+    <meta
+      name="keywords"
+      content="admin, dashboard, management, control panel"
+    />
+    <title>Admin Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/admin-dashboard.css') }}"
+    />
+      <!-- favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="{{ url_for('static', filename='icons/apple-touch-icon.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{{ url_for('static', filename='icons/favicon-32x32.png') }}"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="{{ url_for('static', filename='icons/favicon-16x16.png') }}"
+    />
+    <link
+      rel="manifest"
+      href="{{ url_for('static', filename='icons/site.webmanifest') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Admin Dashboard</h1>
+      <div class="top-right-button">
+        <a href="/admin/messages" class="menu-button">Contact Messages</a>
+        <a href="/" class="menu-button">Homepage</a>
+        <a href="/logout" class="menu-button">Logout</a>
+      </div>
+    </header>
+    <main>
+      <section id="list-foods">
+        <h2>List of Foods</h2>
+        <table class="foods-table">
+          {% for food in foods %}
+          <tr>
+            <td>{{ food.fid }}</td>
+            <td>{{ food.name }}</td>
+            <td>${{ food.price }}</td>
+            <td>{{ food.description }}</td>
+            <td>
+              {% if food.image %}
+              <img
+                src="{{ url_for('static', filename='img/foods/' ~ food.image) }}"
+                width="50"
+              />
+              {% else %} No Image {% endif %}
+            </td>
+            <td>
+              <div class="actions">
+                <a href="/edit-food/{{ food.fid }}">
+                  <button type="button" class="edit-btn">Edit</button>
+                </a>
+                <form action="/delete-food/{{ food.fid }}" method="POST">
+                  <button class="delete-btn">Delete</button>
+                </form>
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
+      </section>
+      <section id="edit-food">
+        <h2>Add Food</h2>
+        <form
+          class="edit-food-form"
+          action="/add-food"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <label for="edit-name">Food Name:</label>
+          <input type="text" id="edit-name" name="edit-name" required />
+
+          <label for="edit-price">Price:</label>
+          <input type="number" id="edit-price" name="edit-price" required />
+
+          <label for="edit-desc">Description:</label>
+          <textarea
+            id="edit-desc"
+            name="edit-desc"
+            rows="3"
+            required
+          ></textarea>
+
+          <label for="edit-image">Food Image:</label>
+          <input
+            type="file"
+            id="edit-image"
+            name="edit-image"
+            accept="image/*"
+          />
+
+          <button type="submit">Add Food</button>
+        </form>
+      </section>
+      <section>
+        <section id="add-photo">
+          <h2>List of Gallery Photos</h2>
+          <table class="foods-table">
+            {% for photo in photos %}
+            <tr>
+              <td>{{ photo.id }}</td>
+              <td>{{ photo.title }}</td>
+              <td>
+                {% if photo.image %}
+                <img
+                  src="{{ url_for('static', filename='img/gallery/' ~ photo.image) }}"
+                  width="50"
+                />
+                {% else %} No Image {% endif %}
+              </td>
+              <td>
+                <div class="actions">
+                  <a href="/edit-photo/{{ photo.id }}">
+                    <button type="button" class="edit-btn">Edit</button>
+                  </a>
+                  <form action="/delete-photo/{{ photo.id }}" method="POST">
+                    <button class="delete-btn">Delete</button>
+                  </form>
+                </div>
+              </td>
+            </tr>
+            {% endfor %}
+          </table>
+        </section>
+      </section>
+      <section>
+        <section id="add-photo">
+          <h2>Add Gallery Photo</h2>
+
+          <form action="/add-photo" method="POST" enctype="multipart/form-data">
+            <label>Title:</label>
+            <input type="text" name="title" required />
+
+            <label>Image:</label>
+            <input type="file" name="image" accept="image/*" required />
+
+            <button type="submit">Add Photo</button>
+          </form>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>

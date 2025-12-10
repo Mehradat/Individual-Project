@@ -1,0 +1,22 @@
+*,::before,::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: "Inter", sans-serif;
+    max-width: 2000px;
+        margin: 0 auto;
+        scroll-behavior: auto;
+}
+main {
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 0 21px;
+}
+  ul{
+    list-style-type: none;
+  }
+  a{
+    text-decoration: none;
+  }

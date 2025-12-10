@@ -1,0 +1,92 @@
+.about-main {
+    padding: 120px 8%;
+    min-height: 60vh;
+    display: flex;
+    justify-content: center;
+}
+
+.about-wrapper {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.about-text {
+    font-family: 'Inter', sans-serif;
+    color: #444;
+    line-height: 1.8;
+    font-size: 16px;
+    text-align: justify;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+    font-weight: 600;
+    color: #ea6d27;
+}
+
+.about-info-section {
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.about-info-card {
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.about-header-center {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-header-center h1 {
+    font-family: "David Libre", serif;
+    font-size: 42px;
+    color: #ea6d27;
+    margin-bottom: 10px;
+}
+
+.about-header-center p {
+    color: #666;
+    font-size: 18px;
+}
+
+.contact-card-orange {
+    background-color: #ea6d27;
+    color: white;
+}
+
+.contact-card-orange h3 {
+    color: white !important;
+}
+
+.contact-card-orange .info-item .icon {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.contact-card-orange .info-item strong {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-card-orange .info-item p {
+    color: white;
+}

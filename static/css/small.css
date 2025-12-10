@@ -1,0 +1,216 @@
+@media (max-width: 759px) {
+    header {
+        height: auto;
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    header .nav .menu-nav .menu-list {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .section1 {
+        flex-direction: column;
+        background-position: center;
+        background-size: cover;
+        margin-top: 180px;
+    }
+
+    .section1 .section1-left {
+        width: 100%;
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    .section1 .section1-left .title {
+        width: 100%;
+        font-size: 40px;
+        padding-bottom: 30px;
+    }
+
+    .section1 .section1-left .parag {
+        width: 100%;
+        margin: 0 auto 20px;
+    }
+
+    .section1 .section1-left .left-button {
+        display: flex;
+        justify-content: center;
+    }
+
+    .section1 .section1-right {
+        width: 100%;
+        padding-top: 0;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 50px;
+    }
+
+    .section1 .section1-right img:nth-child(2) {
+        display: none;
+    }
+
+    .section2-menu .cards {
+        gap: 20px;
+    }
+
+    .section2-menu .card {
+        width: 45%;
+    }
+
+    .section2-menu .chef-section {
+        flex-direction: column;
+        margin-top: 80px;
+    }
+
+    .section2-menu .chef-section .chef-left,
+    .section2-menu .chef-section .chef-right {
+        width: 100%;
+    }
+
+    .section2-menu .chef-section .chef-left {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .section2-menu .chef-section .chef-left .chef-parag {
+        width: 100%;
+        margin: 0 auto 40px;
+    }
+
+    .section2-menu .chef-section .chef-left .chef-lists {
+        justify-content: center;
+    }
+
+    .section2-menu .chef-section .chef-left .chef-buttons {
+        justify-content: center;
+    }
+
+    .section2-menu .chef-section .chef-right img {
+        width: 80%;
+    }
+
+    .newsletter-wrapper {
+        width: 95%;
+    }
+
+    .newsletter-content {
+        width: 90%;
+    }
+
+    .newsletter-input {
+        width: 90%;
+    }
+
+    .footer {
+        flex-direction: column;
+        padding: 60px 20px;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .footer .footer-left,
+    .footer .footer-nav,
+    .footer .footer-social {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer .footer-left p {
+        width: 100%;
+        margin: 0 auto 20px;
+    }
+
+    .footer .footer-logo {
+        justify-content: center;
+        transform: none;
+        margin-bottom: 20px;
+    }
+
+    .footer .hours {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .footer .hours div {
+        justify-content: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+    .footer .hours p {
+        margin-top: 0;
+    }
+
+    .footer .footer-social .social-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo {
+        width: 150px;
+        height: auto;
+    }
+
+    header .nav .menu-nav .menu-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .section1 .section1-left .title {
+        font-size: 32px;
+    }
+
+    .section1 .section1-left .left-button {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .section1 .section1-left .left-button a:nth-child(1) {
+        margin-right: 0;
+    }
+
+    .section2-menu .card {
+        width: 100%;
+    }
+
+    .section2-menu .chef-section .chef-left .chef-lists {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .newsletter-content h2 {
+        font-size: 24px;
+    }
+
+    .newsletter-input {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .newsletter-input input,
+    .newsletter-input button {
+        width: 100%;
+    }
+
+    .section2-menu .chef-section .chef-right img {
+        width: 100%;
+    }
+}

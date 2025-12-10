@@ -1,0 +1,91 @@
+@media (min-width: 992px) and (max-width: 1200px) {
+    
+    header {
+        padding: 20px 40px;
+        height: auto;
+    }
+    header .logo {
+        width: 160px;
+        height: auto;
+        margin-bottom: 0;
+    }
+    header .nav .menu-nav .menu-list {
+        gap: 30px;
+    }
+
+    
+    .section1 .section1-left {
+        padding: 120px 60px;
+    }
+    .section1 .section1-left .title {
+        font-size: 42px;
+        width: 100%;
+        padding-bottom: 40px;
+    }
+    .section1 .section1-left .parag {
+        width: 100%;
+        font-size: 15px;
+    }
+    .section1 .section1-right {
+        padding-top: 100px;
+    }
+    .section1 .section1-right img:nth-child(1) {
+        width: 90%;
+    }
+
+    
+    .section2-menu .cards {
+        gap: 20px;
+        width: 95%;
+    }
+    .section2-menu .card {
+        width: 31%;
+        padding: 25px;
+    }
+
+    .section2-menu .card img {
+        width: 140px;
+        height: 140px;
+    }
+    .section2-menu .card h3 {
+        font-size: 20px;
+    }
+
+    
+    .section2-menu .chef-section {
+        margin-top: 100px;
+        gap: 30px;
+    }
+    .section2-menu .chef-section .chef-left .chef-title {
+        font-size: 40px;
+    }
+    .section2-menu .chef-section .chef-left .chef-parag {
+        width: 100%;
+    }
+    .section2-menu .chef-section .chef-lists {
+        gap: 30px;
+    }
+    .section2-menu .chef-section .chef-right img {
+        width: 350px;
+    }
+
+    
+    .newsletter-content h2 {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+    .newsletter-input {
+        width: 80%;
+    }
+
+    
+    .footer {
+        padding: 80px 5%;
+    }
+    .footer .footer-left {
+        width: 40%;
+    }
+    .footer .footer-nav {
+        margin-left: 20px;
+    }
+}
